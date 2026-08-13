@@ -1,0 +1,8 @@
+# Files/folders to exclude from the Elastic Beanstalk deployment bundle.
+# (EB compiles TypeScript on the server, so we send src/ + tsconfig, not www/.)
+
+node_modules/
+www/
+.env
+*.log
+mock/

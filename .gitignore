@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+www/
+dist/
+
+# Environment & secrets — never commit these
+.env
+udagram/set_env.sh
+
+# AWS Elastic Beanstalk (keep config yamls, ignore generated state)
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temp / cache
+.tmp/
+.sass-cache/
+coverage/
