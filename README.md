@@ -2,15 +2,11 @@
 
 Udagram is a full-stack web application that allows users to register, log in, post photos to a public feed, and have those photos processed through an image filtering service. It is deployed on AWS with a fully automated CI/CD pipeline using CircleCI.
 
-<!-- CircleCI build status badge — replace ORG and REPO with your values -->
-<!-- [![CircleCI](https://dl.circleci.com/status-badge/img/gh/YOUR-ORG/YOUR-REPO/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/YOUR-ORG/YOUR-REPO/tree/master) -->
-
 ---
 
 ## Live Application
 
-> **Frontend URL:** `[udagram](http://udagram-647463061799-us-east-1-an.s3-website-us-east-1.amazonaws.com/)`
-> *(Replace with your actual S3 static website URL after deployment)*
+> **Frontend URL:** `http://udagram-647463061799-us-east-1-an.s3-website-us-east-1.amazonaws.com`
 
 ---
 
