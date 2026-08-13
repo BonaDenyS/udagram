@@ -33,20 +33,40 @@ For full details see the [`docs/`](docs/) folder:
 
 ## Screenshots
 
-### Last Successful CircleCI Build
-> *(Add screenshot: CircleCI dashboard showing passing build/hold/deploy stages)*
+### 1. Application Architecture
+![Application architecture diagram](screenshots/architecture.png)
 
-### AWS RDS Database
-> *(Add screenshot: RDS console showing your PostgreSQL instance — status "Available")*
+### 2. CI/CD Pipeline Infrastructure
+![CI/CD pipeline diagram](screenshots/pipeline.png)
 
-### AWS Elastic Beanstalk API
-> *(Add screenshot: EB environment dashboard showing "Ok" health status)*
+### 3. AWS RDS — PostgreSQL Database
+Status **Available**, engine PostgreSQL, region `us-east-1`.
 
-### AWS S3 Frontend Hosting
-> *(Add screenshot: S3 bucket with static website hosting enabled)*
+![RDS PostgreSQL instance](screenshots/rds-database.png)
 
-### CircleCI Environment Variables
-> *(Add screenshot: CircleCI Project Settings → Environment Variables page)*
+### 4. AWS S3 — Frontend Hosting
+Static website hosting enabled on the frontend bucket.
+
+![S3 bucket properties](screenshots/s3-bucket.png)
+![S3 bucket overview](screenshots/s3-bucket-overview.png)
+
+### 5. AWS Elastic Beanstalk — API
+Environment `udagram-api-dev` running the Node.js API.
+
+![Elastic Beanstalk environment](screenshots/elastic-beanstalk.png)
+
+### 6. CircleCI — Project / Account
+![CircleCI project connected to GitHub](screenshots/circleci-account.png)
+
+### 7. CircleCI — Environment Variables
+Variable names shown; values stay masked (expected).
+
+![CircleCI environment variables](screenshots/circleci-env-vars.png)
+
+### 8. Last Successful Pipeline Build
+`build → hold → deploy` all green.
+
+![CircleCI last successful build](screenshots/circleci-last-build.png)
 
 ---
 
