@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="900" viewBox="0 0 1020 900" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0b1a2a" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 z" fill="#5b6673"/>
+    </marker>
+  </defs>
+
+  <rect width="1020" height="900" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="510" y="44" text-anchor="middle" font-size="27" font-weight="700" fill="#15263b">Udagram &#8212; CI/CD Pipeline Infrastructure (CircleCI)</text>
+  <text x="510" y="70" text-anchor="middle" font-size="14.5" fill="#5b6b7c">Push to master &#8594; build &#8594; manual approval (hold) &#8594; deploy to AWS</text>
+
+  <!-- lead-in nodes -->
+  <rect x="210" y="96" width="260" height="46" rx="10" fill="#eef2f6" stroke="#c2cedb" filter="url(#sh)"/>
+  <text x="340" y="124" text-anchor="middle" font-size="14" font-weight="700" fill="#31465c">Developer pushes to master</text>
+
+  <path d="M340,142 L340,168" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+
+  <rect x="210" y="170" width="260" height="46" rx="10" fill="#1f2d3d" stroke="#1f2d3d" filter="url(#sh)"/>
+  <text x="340" y="198" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">GitHub repository</text>
+
+  <path d="M340,216 L340,242" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="410" y="234" text-anchor="middle" font-size="11.5" fill="#7c8a98" font-weight="600">webhook</text>
+
+  <rect x="210" y="244" width="260" height="46" rx="10" fill="#2b2f36" stroke="#2b2f36" filter="url(#sh)"/>
+  <circle cx="243" cy="267" r="8" fill="#ffffff"/><circle cx="243" cy="267" r="3.4" fill="#2b2f36"/>
+  <text x="352" y="272" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">CircleCI (config.yml)</text>
+
+  <path d="M340,290 L340,318" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+
+  <!-- BUILD -->
+  <g filter="url(#sh)">
+    <rect x="150" y="320" width="380" height="196" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M150,332 a12,12 0 0 1 12,-12 h356 a12,12 0 0 1 12,12 v24 h-380 z" fill="#2f9e44"/>
+  </g>
+  <text x="170" y="349" font-size="15.5" font-weight="700" fill="#ffffff">build</text>
+  <text x="510" y="349" text-anchor="end" font-size="12" fill="#eafaef">every push &#183; cimg/node:14.15</text>
+  <text x="172" y="382" font-size="12.8" fill="#3c4a58">1 &#183; Checkout code from GitHub</text>
+  <text x="172" y="405" font-size="12.8" fill="#3c4a58">2 &#183; Install frontend deps &#8212; npm run frontend:install</text>
+  <text x="172" y="428" font-size="12.8" fill="#3c4a58">3 &#183; Install API deps &#8212; npm run api:install</text>
+  <text x="172" y="451" font-size="12.8" fill="#3c4a58">4 &#183; Lint frontend &#8212; npm run frontend:lint</text>
+  <text x="172" y="474" font-size="12.8" fill="#3c4a58">5 &#183; Build frontend &#8212; ng build (production)</text>
+  <text x="172" y="497" font-size="12.8" fill="#3c4a58">6 &#183; Build API &#8212; tsc + package Archive.zip</text>
+
+  <path d="M340,516 L340,548" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="430" y="537" text-anchor="middle" font-size="11.5" fill="#7c8a98" font-weight="600">success &#183; master only</text>
+
+  <!-- HOLD -->
+  <g filter="url(#sh)">
+    <rect x="150" y="550" width="380" height="92" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M150,562 a12,12 0 0 1 12,-12 h356 a12,12 0 0 1 12,12 v24 h-380 z" fill="#e0a106"/>
+  </g>
+  <text x="170" y="579" font-size="15.5" font-weight="700" fill="#ffffff">hold</text>
+  <text x="510" y="579" text-anchor="end" font-size="12" fill="#fff6e0">type: approval</text>
+  <text x="172" y="609" font-size="12.8" fill="#3c4a58">Manual approval gate &#8212; a team member must click</text>
+  <text x="172" y="629" font-size="12.8" fill="#3c4a58"><tspan font-weight="700">Approve</tspan> in the CircleCI UI before deployment proceeds.</text>
+
+  <path d="M340,642 L340,674" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="405" y="663" text-anchor="middle" font-size="11.5" fill="#7c8a98" font-weight="600">approved</text>
+
+  <!-- DEPLOY -->
+  <g filter="url(#sh)">
+    <rect x="150" y="676" width="380" height="120" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M150,688 a12,12 0 0 1 12,-12 h356 a12,12 0 0 1 12,12 v24 h-380 z" fill="#1f6fb2"/>
+  </g>
+  <text x="170" y="705" font-size="15.5" font-weight="700" fill="#ffffff">deploy</text>
+  <text x="510" y="705" text-anchor="end" font-size="12" fill="#e8f1f9">cimg/base &#183; eb + aws-cli orbs</text>
+  <text x="172" y="735" font-size="12.8" fill="#3c4a58">npm run deploy  &#8594;</text>
+  <text x="192" y="757" font-size="12.8" fill="#3c4a58"><tspan font-weight="700" fill="#e8830c">api:deploy</tspan> &#8594; npm run build &amp;&amp; eb deploy</text>
+  <text x="192" y="779" font-size="12.8" fill="#3c4a58"><tspan font-weight="700" fill="#2f9e44">frontend:deploy</tspan> &#8594; ng build + aws s3 sync</text>
+
+  <!-- deploy targets -->
+  <path d="M300,796 C300,826 250,835 230,852" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <path d="M380,796 C380,826 430,835 450,852" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+
+  <rect x="120" y="854" width="215" height="40" rx="9" fill="#fdf1e3" stroke="#f0c893"/>
+  <text x="227" y="879" text-anchor="middle" font-size="12.8" font-weight="700" fill="#a85f08">Elastic Beanstalk &#183; API live</text>
+  <rect x="350" y="854" width="215" height="40" rx="9" fill="#eaf7ee" stroke="#a9dcb8"/>
+  <text x="457" y="879" text-anchor="middle" font-size="12.8" font-weight="700" fill="#1f7a34">Amazon S3 &#183; Frontend live</text>
+
+  <!-- Env var panel (right) -->
+  <g filter="url(#sh)">
+    <rect x="600" y="320" width="400" height="474" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M600,332 a12,12 0 0 1 12,-12 h376 a12,12 0 0 1 12,12 v26 h-400 z" fill="#45566a"/>
+  </g>
+  <text x="620" y="350" font-size="14.5" font-weight="700" fill="#ffffff">Environment Variables</text>
+  <text x="620" y="380" font-size="12.2" fill="#54636f">Stored in CircleCI &#8594; Project Settings.</text>
+  <text x="620" y="399" font-size="12.2" fill="#54636f">Never committed to source control.</text>
+
+  <line x1="620" y1="414" x2="980" y2="414" stroke="#e3e9f0"/>
+  <text x="620" y="437" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#1f6fb2">POSTGRES_USERNAME</tspan>  RDS master user</text>
+  <text x="620" y="461" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#1f6fb2">POSTGRES_PASSWORD</tspan>  RDS master password</text>
+  <text x="620" y="485" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#1f6fb2">POSTGRES_HOST</tspan>  RDS endpoint</text>
+  <text x="620" y="509" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#1f6fb2">POSTGRES_DB</tspan>  database name</text>
+  <text x="620" y="533" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#2f9e44">AWS_BUCKET</tspan>  S3 bucket name</text>
+  <text x="620" y="557" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#2f9e44">AWS_REGION</tspan>  e.g. us-east-1</text>
+  <text x="620" y="581" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#e8830c">AWS_ACCESS_KEY_ID</tspan>  IAM access key</text>
+  <text x="620" y="605" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#e8830c">AWS_SECRET_ACCESS_KEY</tspan>  IAM secret</text>
+  <text x="620" y="629" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#8a52c9">JWT_SECRET</tspan>  signs JWT tokens</text>
+  <text x="620" y="653" font-size="12.6" fill="#3c4a58"><tspan font-family="Consolas,monospace" font-weight="700" fill="#8a52c9">URL</tspan>  frontend origin (CORS)</text>
+
+  <line x1="620" y1="672" x2="980" y2="672" stroke="#e3e9f0"/>
+  <text x="620" y="697" font-size="12.2" font-weight="700" fill="#15263b">Workflow gate</text>
+  <text x="620" y="719" font-size="12" fill="#54636f">The hold + master-branch filter ensures only</text>
+  <text x="620" y="737" font-size="12" fill="#54636f">reviewed code on master can ever deploy.</text>
+  <text x="620" y="769" font-size="11.5" fill="#8492a0">Screenshot this panel live at: Project Settings</text>
+  <text x="620" y="785" font-size="11.5" fill="#8492a0">&#8594; Environment Variables (values stay hidden).</text>
+</svg>

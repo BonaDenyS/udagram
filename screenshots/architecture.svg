@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="780" viewBox="0 0 1000 780" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0b1a2a" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L8,3.2 L0,6.4 z" fill="#5b6673"/>
+    </marker>
+  </defs>
+
+  <rect width="1000" height="780" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="500" y="44" text-anchor="middle" font-size="27" font-weight="700" fill="#15263b">Udagram &#8212; AWS Infrastructure Architecture</text>
+  <text x="500" y="70" text-anchor="middle" font-size="14.5" fill="#5b6b7c">Full-stack image-sharing app &#183; Amazon S3 &#183; AWS Elastic Beanstalk &#183; Amazon RDS</text>
+
+  <!-- Users -->
+  <rect x="370" y="98" width="260" height="54" rx="10" fill="#eef2f6" stroke="#c2cedb" filter="url(#sh)"/>
+  <text x="500" y="123" text-anchor="middle" font-size="15.5" font-weight="700" fill="#31465c">Internet / End Users</text>
+  <text x="500" y="141" text-anchor="middle" font-size="12" fill="#6b7a8a">Web browser</text>
+
+  <!-- Arrows from users -->
+  <path d="M445,152 C400,190 330,205 300,247" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="322" y="205" text-anchor="middle" font-size="11.5" fill="#5b6b7c" font-weight="600">1 &#183; load app</text>
+  <path d="M568,152 C640,190 710,205 745,247" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="700" y="205" text-anchor="middle" font-size="11.5" fill="#5b6b7c" font-weight="600">2 &#183; API calls (JWT)</text>
+
+  <!-- S3 Frontend -->
+  <g filter="url(#sh)">
+    <rect x="95" y="250" width="300" height="132" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M95,262 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v22 h-300 z" fill="#2f9e44"/>
+  </g>
+  <text x="245" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Amazon S3</text>
+  <text x="245" y="308" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Frontend Hosting</text>
+  <text x="245" y="330" text-anchor="middle" font-size="12.5" fill="#54636f">Angular 8 + Ionic 4</text>
+  <text x="245" y="350" text-anchor="middle" font-size="12.5" fill="#54636f">Static website (public GET)</text>
+  <text x="245" y="370" text-anchor="middle" font-size="12.5" fill="#54636f">index.html &#183; no-cache</text>
+
+  <!-- Elastic Beanstalk -->
+  <g filter="url(#sh)">
+    <rect x="605" y="250" width="300" height="132" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M605,262 a12,12 0 0 1 12,-12 h276 a12,12 0 0 1 12,12 v22 h-300 z" fill="#e8830c"/>
+  </g>
+  <text x="755" y="272" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">AWS Elastic Beanstalk</text>
+  <text x="755" y="308" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2d3d">Backend REST API</text>
+  <text x="755" y="330" text-anchor="middle" font-size="12.5" fill="#54636f">Node.js + Express + TypeScript</text>
+  <text x="755" y="350" text-anchor="middle" font-size="12.5" fill="#54636f">Single instance &#183; Port 8080</text>
+  <text x="755" y="370" text-anchor="middle" font-size="12.5" fill="#54636f">JWT auth &#183; feed CRUD</text>
+
+  <!-- S3 app calls API (dashed) -->
+  <path d="M395,316 L605,316" fill="none" stroke="#9aa6b2" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arw)"/>
+  <text x="500" y="308" text-anchor="middle" font-size="11.5" fill="#7c8a98" font-weight="600">SPA &#8594; REST (HTTPS)</text>
+
+  <!-- RDS -->
+  <g filter="url(#sh)">
+    <rect x="560" y="480" width="180" height="120" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M560,492 a12,12 0 0 1 12,-12 h156 a12,12 0 0 1 12,12 v22 h-180 z" fill="#1f6fb2"/>
+  </g>
+  <text x="650" y="502" text-anchor="middle" font-size="14.5" font-weight="700" fill="#ffffff">Amazon RDS</text>
+  <text x="650" y="536" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2d3d">PostgreSQL 18</text>
+  <text x="650" y="557" text-anchor="middle" font-size="12.5" fill="#54636f">db.t3.micro</text>
+  <text x="650" y="577" text-anchor="middle" font-size="12.5" fill="#54636f">Users &amp; Feed data</text>
+
+  <!-- S3 media -->
+  <g filter="url(#sh)">
+    <rect x="770" y="480" width="180" height="120" rx="12" fill="#ffffff" stroke="#d7e0ea"/>
+    <path d="M770,492 a12,12 0 0 1 12,-12 h156 a12,12 0 0 1 12,12 v22 h-180 z" fill="#2f9e44"/>
+  </g>
+  <text x="860" y="502" text-anchor="middle" font-size="14.5" font-weight="700" fill="#ffffff">Amazon S3</text>
+  <text x="860" y="536" text-anchor="middle" font-size="14" font-weight="700" fill="#1f2d3d">Media Storage</text>
+  <text x="860" y="557" text-anchor="middle" font-size="12.5" fill="#54636f">User uploads</text>
+  <text x="860" y="577" text-anchor="middle" font-size="12.5" fill="#54636f">pre-signed URLs</text>
+
+  <!-- EB to data stores -->
+  <path d="M720,382 C700,430 680,445 655,478" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="628" y="440" text-anchor="middle" font-size="11.5" fill="#5b6b7c" font-weight="600">SQL &#183; 5432</text>
+  <path d="M800,382 C820,430 840,445 860,478" fill="none" stroke="#5b6673" stroke-width="2" marker-end="url(#arw)"/>
+  <text x="905" y="440" text-anchor="middle" font-size="11.5" fill="#5b6b7c" font-weight="600">signed PUT/GET</text>
+
+  <!-- Flow legend (bottom-left) -->
+  <rect x="60" y="452" width="420" height="270" rx="12" fill="#f7f9fb" stroke="#dbe3ec"/>
+  <text x="82" y="480" font-size="15" font-weight="700" fill="#15263b">Request Flow</text>
+  <text x="82" y="510" font-size="12.8" fill="#3c4a58"><tspan font-weight="700" fill="#2f9e44">1.</tspan>  Browser loads the frontend from S3 (static site).</text>
+  <text x="82" y="536" font-size="12.8" fill="#3c4a58"><tspan font-weight="700" fill="#e8830c">2.</tspan>  Angular app calls the API on Elastic Beanstalk.</text>
+  <text x="82" y="562" font-size="12.8" fill="#3c4a58"><tspan font-weight="700" fill="#1f6fb2">3.</tspan>  API validates JWT &amp; queries RDS for feed data.</text>
+  <text x="82" y="588" font-size="12.8" fill="#3c4a58"><tspan font-weight="700" fill="#1f6fb2">4.</tspan>  API returns pre-signed S3 URLs for images.</text>
+  <text x="82" y="614" font-size="12.8" fill="#3c4a58"><tspan font-weight="700" fill="#2f9e44">5.</tspan>  Browser uploads / fetches images directly to S3.</text>
+
+  <!-- category key -->
+  <rect x="82" y="640" width="14" height="14" rx="3" fill="#2f9e44"/>
+  <text x="103" y="652" font-size="12" fill="#54636f">Storage (S3)</text>
+  <rect x="210" y="640" width="14" height="14" rx="3" fill="#e8830c"/>
+  <text x="231" y="652" font-size="12" fill="#54636f">Compute (EB)</text>
+  <rect x="338" y="640" width="14" height="14" rx="3" fill="#1f6fb2"/>
+  <text x="359" y="652" font-size="12" fill="#54636f">Database (RDS)</text>
+  <text x="82" y="694" font-size="11.5" fill="#8492a0">All service-to-service traffic over HTTPS. RDS publicly accessible for EB connectivity.</text>
+</svg>
