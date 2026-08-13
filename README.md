@@ -9,7 +9,7 @@ Udagram is a full-stack web application that allows users to register, log in, p
 
 ## Live Application
 
-> **Frontend URL:** `http://<your-s3-bucket>.s3-website-us-east-1.amazonaws.com`
+> **Frontend URL:** `[udagram](http://udagram-647463061799-us-east-1-an.s3-website-us-east-1.amazonaws.com/)`
 > *(Replace with your actual S3 static website URL after deployment)*
 
 ---
